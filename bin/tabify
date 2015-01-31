@@ -1,0 +1,65 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use App::tabify;
+
+App::tabify::parse_cmdline();
+App::tabify::run('tabify');
+
+1;
+# ABSTRACT: Convert spaces to tabs
+# PODNAME:
+
+=head1 SYNOPSIS
+
+ tabify [OPTION]... <FILES...>
+
+
+=head1 DESCRIPTION
+
+
+=head1 OPTIONS
+
+=over
+
+=item * --tab-width=i, -w (default: 8)
+
+Set tab width.
+
+=item * --in-place(=s), -i
+
+Modify the files in-place, optionally setting the backup extension. If backup
+extension is not set, no backups will be created.
+
+=item * --(no)indent-only
+
+Not yet implemented.
+
+By default C<tabify> will only convert spaces at the beginning of lines
+(indentation spaces). Use C<--noindent-only>) to replace multiple spaces to tabs
+even though they are not at the beginning of lines.
+
+
+=head1 EXIT CODES
+
+0 on success.
+
+255 on I/O error.
+
+99 on command-line options error.
+
+
+=head1 FAQ
+
+
+=head1 SEE ALSO
+
+L<untabify>
+
+=cut
