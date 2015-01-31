@@ -80,6 +80,8 @@ sub run {
 1;
 # ABSTRACT: Convert spaces to tabs (tabify), or tabs to spaces (untabify)
 
+=for Pod::Coverage ^(.+)$
+
 =head1 SYNOPSIS
 
 See the command-line scripts L<tabify> and L<untabify>.

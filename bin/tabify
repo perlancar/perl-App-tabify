@@ -1,5 +1,7 @@
 #!perl
 
+# FRAGMENT id=shcompgen-hint command=tabify
+
 # DATE
 # VERSION
 
@@ -39,6 +41,8 @@ Not yet implemented.
 By default C<tabify> will only convert spaces at the beginning of lines
 (indentation spaces). Use C<--noindent-only>) to replace multiple spaces to tabs
 even though they are not at the beginning of lines.
+
+=back
 
 
 =head1 EXIT CODES

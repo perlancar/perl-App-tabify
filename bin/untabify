@@ -1,5 +1,7 @@
 #!perl
 
+# FRAGMENT id=shcompgen-hint command=untabify
+
 # DATE
 # VERSION
 
@@ -38,6 +40,8 @@ Not yet implemented.
 
 By default C<untabify> will convert all tabs to spaces. Use C<--indent-only> to
 only convert tabs that are at the beginning of lines.
+
+=back
 
 
 =head1 EXIT CODES
