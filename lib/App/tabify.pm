@@ -67,7 +67,9 @@ sub run {
             1 while s|^(.*?)\t|$1 .
                 (" " x (ceil((length($1)+1)/$tw)*$tw - length($1)))|em;
         } else {
-            s/\t/x/g;
+            s|^([ ]{2,})|
+                ("\t" x int(length($1)/$tw)) .
+                     (" " x (length($1) - int(length($1)/$tw)*$tw))|em;
         }
     } continue {
         print;
