@@ -20,10 +20,10 @@ sub parse_cmdline {
     my $res = GetOptionsWithCompletion(
         sub {},
         'tab-width|w=i' => \$Opts{tab_width},
-        'in-place|i'  => sub { # XXX in-place|i:s doesn't work?
-            $Opts{in_place} = 1;
-            #$Opts{backup_ext} = $_[1] if defined $_[1];
-        },
+        #'in-place|i'  => sub { # XXX in-place|i:s doesn't work?
+        #    $Opts{in_place} = 1;
+        #    #$Opts{backup_ext} = $_[1] if defined $_[1];
+        #},
         'version|v'     => sub {
             no warnings 'once';
             say "tabify version $main::VERSION";
@@ -36,8 +36,6 @@ Usage:
   (un)tabify --help|-h
   (un)tabify --version|-v
 Options:
-  --inplace(=s), -i  Modify the files in-place (optionally set backup ext,
-                     which defaults to '~').
   --tab-width=i, -w  Set tab width (default: 8).
 For more details, see the manpage/documentation.
 USAGE
@@ -57,14 +55,14 @@ sub run {
 
   LINE:
     while (<>) {
-        if ($ARGV ne $oldargv) {
-            if (defined($Opts{backup_ext}) && $Opts{backup_ext} ne '') {
-                rename $ARGV, "$ARGV$Opts{backup_ext}";
-                open $argvout, ">", $ARGV;
-                select $argvout;
-                $oldargv = $ARGV;
-            }
-        }
+        #if ($ARGV ne $oldargv) {
+        #    if (defined($Opts{backup_ext}) && $Opts{backup_ext} ne '') {
+        #        rename $ARGV, "$ARGV$Opts{backup_ext}";
+        #        open $argvout, ">", $ARGV;
+        #        select $argvout;
+        #        $oldargv = $ARGV;
+        #    }
+        #}
         if ($which eq 'untabify') {
             1 while s|^(.*?)\t|$1 .
                 (" " x (ceil((length($1)+1)/$tw)*$tw - length($1)))|em;
@@ -74,7 +72,7 @@ sub run {
     } continue {
         print;
     }
-    select STDOUT;
+    #select STDOUT;
 }
 
 1;

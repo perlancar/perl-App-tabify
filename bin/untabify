@@ -32,11 +32,6 @@ App::tabify::run('untabify');
 
 Set tab width.
 
-=item * --in-place(=s), -i
-
-Modify the files in-place, optionally setting the backup extension. If backup
-extension is not set, no backups will be created.
-
 =item * --(no)indent-only
 
 Not yet implemented.
